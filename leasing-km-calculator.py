@@ -31,8 +31,12 @@ current_days = diff_date_current.days
 total_km = 80000
 total_avg = total_km/total_days
 
+
 #input of current km and current avg
 current_km = input("Aktueller km Stand:")
+
+#error catching should be here
+
 current_avg = float(current_km)/float(current_days)
 
 #calculate difference between should and actual distance
