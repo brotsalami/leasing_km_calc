@@ -15,8 +15,8 @@ start_date = '05.09.2017'
 #print("startdate date:", start_date)
 
 #define cost earnings
-cost = 1.44
-earnings = 1.04
+cost = 0.0743
+earnings = 0.045
 
 #calculate the number of days between start and end
 diff_date_total = datetime.datetime.strptime(return_date, datetimeFormat)\
