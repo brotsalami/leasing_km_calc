@@ -49,14 +49,16 @@ difference_total_current = total_avg * float(current_days) - float(current_km)
 #output of calculations
 print("Gesamtdurchschnitt: {:.2f}".format(total_avg),"km")
 print("Aktueller Durchschnitt: {:.2f}".format(current_avg),"km")
-print("Erwartete Gesamtdifferenz: {:.2f}"  .format(difference_total_current),"km")
+
 
 #calculation of cost/earning when the car is returned
 if current_avg < total_avg:
     difference_total_current * earnings
-    print("Erwartete Einnahmen: {:.2f}".format(difference_total_current * earnings),"€")
+    print("Erwartete Rückzahlung: {:.2f}".format(difference_total_current * earnings),"€")
+    print("Erwartete Differenz zur max km-Zahl: {:.2f}"  .format(difference_total_current),"km weniger")
 else:
     difference_total_current * cost
-    print("Erwartete Kosten: {:.2f}".format(difference_total_current * cost),"€")
+    print("Erwartete Nachzahlung: {:.2f}".format(difference_total_current * cost * -1),"€")
+    print("Erwartete Differenz zur max km-Zahl: {:.2f}"  .format(difference_total_current * -1),"km zu viel")
 
 
