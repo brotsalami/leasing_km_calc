@@ -37,16 +37,17 @@ total_avg = total_km/total_days
 current_km = 0
 
 #input of current km and current avg
-while current_km == 0.0:    
+while current_km == 0:    
     try:
-        current_km = input("Aktueller km Stand:")
-        if current_km < 0.0:
-            raise ValueError ("Eingabe muss größer 0 sein!")    
-        if current_km + 2.0:
-            raise ValueError ("Bitte Zahl")
-    except ValueError as ve:
-        print(ve)
-        current_km = 0.0
+        current_km = int(input("Aktueller km Stand:")   
+        print("int") 
+    except ValueError:
+        try:
+           current_km = float(input("Aktueller km Stand:") 
+           print("float") 
+        except ValueError:
+            print("String")
+            current_km = 0.0
 else:
     pass
 
