@@ -78,4 +78,4 @@ else:
     print("Erwartete Nachzahlung: {:.2f}".format(difference_total_current * cost * -1),"€")
     print("Erwartete Differenz zur max km-Zahl: {:.2f}"  .format(difference_total_current * -1),"km zu viel")
 
-
+ende = input("Drücke Enter um das Programm zu beenden")
