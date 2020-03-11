@@ -34,10 +34,27 @@ current_days = diff_date_current.days
 # define total distance in km and calculate total avg
 total_km = 80000
 total_avg = total_km/total_days
-
-
 #input of current km and current avg
-current_km = input("Aktueller km Stand:")
+
+current_km = 0
+user_input = False
+
+while user_input == False:
+    try:
+        current_km = input("Aktueller km Stand:")
+        val = int(current_km)  
+        #print("Input is an integer number. Number = ", val)
+        if val < 0:
+            print("Bitte geben Sie eine positive Zahl ein!")
+        else:
+            user_input = True
+    except ValueError:
+        try:
+            val = float(current_km)
+            #print("Input is a float  number. Number = ", val)
+            user_input = True
+        except ValueError:
+                print("Bitte geben Sie eine positive Zahl ein, keine Buchstaben!")
 
 #error catching should be here
 
@@ -47,7 +64,7 @@ current_avg = float(current_km)/float(current_days)
 difference_total_current = total_avg * float(current_days) - float(current_km)
 
 #output of calculations
-print("Gesamtdurchschnitt: {:.2f}".format(total_avg),"km")
+print("Total Average: {:.2f}".format(total_avg),"km")
 print("Aktueller Durchschnitt: {:.2f}".format(current_avg),"km")
 
 
