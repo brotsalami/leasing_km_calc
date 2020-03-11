@@ -34,22 +34,27 @@ current_days = diff_date_current.days
 # define total distance in km and calculate total avg
 total_km = 80000
 total_avg = total_km/total_days
-current_km = 0
-
 #input of current km and current avg
-while current_km == 0:    
+
+current_km = 0
+user_input = False
+
+while user_input == False:
     try:
-        current_km = int(input("Aktueller km Stand:")   
-        print("int") 
+        current_km = input("Aktueller km Stand:")
+        val = int(current_km)  
+        #print("Input is an integer number. Number = ", val)
+        if val < 0:
+            print("Bitte geben Sie eine positive Zahl ein!")
+        else:
+            user_input = True
     except ValueError:
         try:
-           current_km = float(input("Aktueller km Stand:") 
-           print("float") 
+            val = float(current_km)
+            #print("Input is a float  number. Number = ", val)
+            user_input = True
         except ValueError:
-            print("String")
-            current_km = 0.0
-else:
-    pass
+                print("Bitte geben Sie eine positive Zahl ein, keine Buchstaben!")
 
 #error catching should be here
 
