@@ -5,7 +5,7 @@ from datetime import timedelta
 # get the current day
 today = date.today()
 today_str = today.strftime("%d.%m.%Y")
-print("Today's date:", today_str)
+print("Heute ist der:", today_str)
 
 #define start and end date
 datetimeFormat = '%d.%m.%Y'
@@ -41,20 +41,19 @@ user_input = False
 
 while user_input == False:
     try:
-        current_km = input("Aktueller km Stand:")
+        current_km = input("Bitte geben Sie den aktuellen km Stand ein:")
         val = int(current_km)  
         #print("Input is an integer number. Number = ", val)
         if val < 0:
-            print("Bitte geben Sie eine positive Zahl ein!")
+            print("Bitte geben Sie eine ganze, positive Zahl ein!")
         else:
             user_input = True
     except ValueError:
         try:
             val = float(current_km)
-            #print("Input is a float  number. Number = ", val)
-            user_input = True
+            print("Bitte geben Sie eine ganze, positive Zahl ein!")
         except ValueError:
-                print("Bitte geben Sie eine positive Zahl ein, keine Buchstaben!")
+                print("Bitte geben Sie eine ganze, positive Zahl ein!")
 
 #error catching should be here
 
