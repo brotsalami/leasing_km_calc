@@ -18,15 +18,18 @@ start_date = '05.09.2017'
 cost = 0.0743
 earnings = 0.045
 
+def date_diff (start, end, datetimeFormat):
+    date_diff = datetime.datetime.strptime(end, datetimeFormat)\
+    - datetime.datetime.strptime(start, datetimeFormat)
+    return date_diff
+
 #calculate the number of days between start and end
-diff_date_total = datetime.datetime.strptime(return_date, datetimeFormat)\
-    - datetime.datetime.strptime(start_date, datetimeFormat)
+diff_date_total = date_diff(start_date,return_date, datetimeFormat)
 total_days = diff_date_total.days
 #print("diff_total:", diff_date_total.days)
 
 #calculate the number of days between start and now  
-diff_date_current = datetime.datetime.strptime(today_str, datetimeFormat)\
-    - datetime.datetime.strptime(start_date, datetimeFormat)
+diff_date_current = date_diff(start_date,today_str, datetimeFormat)
 current_days = diff_date_current.days
 
 #print("diff_current:", diff_date_current.days)
@@ -35,27 +38,23 @@ current_days = diff_date_current.days
 total_km = 80000
 total_avg = total_km/total_days
 #input of current km and current avg
+error_output_number = "Bitte geben Sie eine ganze, positive Zahl ein!"
 
-current_km = 0
-user_input = False
 
-while user_input == False:
+#error catching for user input
+while True:
     try:
         current_km = input("Bitte geben Sie den aktuellen km Stand ein:")
         val = int(current_km)  
+        break
         #print("Input is an integer number. Number = ", val)
         if val < 0:
-            print("Bitte geben Sie eine ganze, positive Zahl ein!")
+            print(error_output_number)
         else:
             user_input = True
     except ValueError:
-        try:
-            val = float(current_km)
-            print("Bitte geben Sie eine ganze, positive Zahl ein!")
-        except ValueError:
-                print("Bitte geben Sie eine ganze, positive Zahl ein!")
+        print(error_output_number)
 
-#error catching should be here
 
 current_avg = float(current_km)/float(current_days)
 
@@ -63,7 +62,7 @@ current_avg = float(current_km)/float(current_days)
 difference_total_current = total_avg * float(current_days) - float(current_km)
 
 #output of calculations
-print("Total Average: {:.2f}".format(total_avg),"km")
+print("Erwarteter Durchschnitt: {:.2f}".format(total_avg),"km")
 print("Aktueller Durchschnitt: {:.2f}".format(current_avg),"km")
 
 
