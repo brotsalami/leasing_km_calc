@@ -10,6 +10,12 @@ print("Heute ist der:", today_str)
 #define start and end date
 datetimeFormat = '%d.%m.%Y'
 return_date = '05.09.2021'
+try:
+    val_date = return_date.days
+    pass
+except AttributeError: 
+    print("ve")
+    pass
 #print("returndate date:", return_date)
 start_date = '05.09.2017'
 #print("startdate date:", start_date)
