@@ -25,9 +25,6 @@ with open('config.csv') as File:
         list_costs.append(row[4])
         list_earnings.append(row[5])
 
-#    print(list_costs[line_sel])
-#    print(len(list_car_name))
-
 
 # get the current day
 today = date.today()
@@ -43,7 +40,7 @@ earnings = float(list_earnings[line_sel]) #0.045
 # define total distance in km and calculate total avg
 total_km = int(list_total_km[line_sel]) #80000
 
-print(total_km)
+
 
 #try:
 #   val_date = return_date.days
@@ -101,6 +98,9 @@ difference_total_current = total_avg * float(current_days) - float(current_km)
 #output of calculations
 print("Erwarteter Durchschnitt: {:.2f}".format(total_avg),"km")
 print("Aktueller Durchschnitt: {:.2f}".format(current_avg),"km")
+print("Gesamt km: {:.2f}".format(total_km),"km")
+#print("bisher gefahren km: ",current_km,"km")
+print("Tage bisher: {:.2f}".format(current_days),"Tage")
 
 
 #calculation of cost/earning when the car is returned
