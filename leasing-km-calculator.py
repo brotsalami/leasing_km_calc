@@ -30,9 +30,10 @@ with open('config.csv') as File:
 today = date.today()
 today_str = today.strftime("%d.%m.%Y")
 print("Heute ist der:", today_str)
+
 #define start and end date
 datetimeFormat = '%d.%m.%Y'
-str_start_date = str(list_start_date[line_sel])
+start_date = str(list_start_date[line_sel])
 return_date = str(list_end_date[line_sel]) #'05.09.2021' #config(2,0)
 #define cost earnings
 cost =  float(list_costs[line_sel])#0.0743 #
@@ -59,12 +60,12 @@ def date_diff (start, end, datetimeFormat):
     return date_diff
 
 #calculate the number of days between start and end
-diff_date_total = date_diff(str_start_date,return_date, datetimeFormat)
+diff_date_total = date_diff(start_date,return_date, datetimeFormat)
 total_days = diff_date_total.days
 #print("diff_total:", diff_date_total.days)
 
 #calculate the number of days between start and now  
-diff_date_current = date_diff(str_start_date,today_str, datetimeFormat)
+diff_date_current = date_diff(start_date,today_str, datetimeFormat)
 current_days = diff_date_current.days
 
 #print("diff_current:", diff_date_current.days)
